@@ -3,6 +3,7 @@ differenziare gli utenti (permettere accesso come admin, utente ) TABELLA UTENTE
 -ADmin = può inserire diversi programmi, come Coach e Dieta,ma può allo stesso tempo comprare dei programmi 
 Permettere all utente di scegliere tra Coaching oppure Dieta 
 Pagina con scelta tra piani di Dieta e Coaching (Allenamento)
+PAGINA aggiuntiva che conterrà il tipo di piano attualmente che si possiede (TABELLA PIANI)
 Se sceglie Coach gli viene presentato in poche parole un coach (TABELLA COACH)
 Piano anche per quanto riguarda la Dieta (TABELLA DIETA)
 Acquisto Piano allenamento(Quindi Utente dovrà inserire il suo budget che dopo l acquisto,che andrà bene o meno , gli verranno prelevati i soldi dovuti all'acquisto

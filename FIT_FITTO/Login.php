@@ -131,7 +131,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     font-size: 70px;
     font-weight: 600;
     font-family: 'Roboto', sans-serif;
-    color: green;
+    color: red;
     text-transform: uppercase;
     text-shadow: 1px 1px 0px #957dad,
       1px 2px 0px #957dad,
@@ -150,7 +150,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     font-size: 35px;
     font-weight: 600;
     font-family: 'Roboto', sans-serif;
-    color: green;
+    color: red;
     text-transform: uppercase;
     text-shadow: 1px 1px 0px #957dad,
       1px 2px 0px #957dad,
@@ -196,7 +196,7 @@ input[name="email"],input[name="password" ] {
 
   input[name="Invia"],input[name="Registrazione" ] {
     width: 100%;
-    background-color: #4CAF50;
+    background-color: red;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;

@@ -11,7 +11,7 @@
             margin: 0;
             padding: 0;
             background-color: #f4f4f4;
-            color: #000; /* Nero */
+            color: #333;
         }
 
         .container {
@@ -22,7 +22,7 @@
 
         h1 {
             text-align: center;
-            color: #990000; /* Rosso scuro */
+            color: #333;
             margin-bottom: 30px;
         }
 
@@ -31,7 +31,7 @@
         }
 
         .contact-info h2 {
-            color: #990000; /* Rosso scuro */
+            color: #333;
             margin-bottom: 10px;
         }
 
@@ -40,11 +40,10 @@
         }
 
         .contact-form {
-            background-color: #000; /* Nero */
+            background-color: #fff;
             padding: 20px;
             border-radius: 5px;
             box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-            color: #fff; /* Bianco */
         }
 
         .contact-form label {
@@ -69,8 +68,8 @@
         }
 
         .contact-form input[type="submit"] {
-            background-color: #990000; /* Rosso scuro */
-            color: #fff; /* Bianco */
+            background-color: #333;
+            color: #fff;
             border: none;
             padding: 10px 20px;
             cursor: pointer;
@@ -88,8 +87,8 @@
             width: 100px;
             margin: 20px auto;
             padding: 10px;
-            background-color: #990000; /* Rosso scuro */
-            color: #fff; /* Bianco */
+            background-color: #333;
+            color: #fff;
             text-align: center;
             text-decoration: none;
             border-radius: 5px;
@@ -105,44 +104,34 @@
 <body>
 
     <div class="container">
-        <h1>Contattaci</h1>
+        <h1>Lascia una tua recensione !</h1>
 
         <div class="contact-info">
-            <h2>Informazioni di Contatto</h2>
-            <p>Email: info@esempio.com</p>
-            <p>Telefono: +39 0123456789</p>
-            <p>Indirizzo: Via dei Fornitori, 123 - 00100, Roma</p>
+
+            
         </div>
 
         <div class="contact-form">
-            <h2>Compila il Modulo di Contatto</h2>
+           
             <form action="#" method="post">
-                <label for="name">Nome:</label>
-                <input type="text" id="name" name="name" required>
 
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
 
                 <label for="message">Messaggio:</label>
                 <textarea id="message" name="MSG" required></textarea>
 
                 <?php
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                session_start();
+        $id = $_SESSION['id'];
+        $nome =  $_SESSION['nome'];
+        $cognome =  $_SESSION['cognome'];
+        $email = $_SESSION['email'];
         
         // Recupera i dati dal form
         $Conf = true;
         $emailErr = "Campi mancanti : <br>";
-        $nome = $_POST["name"];
-        $email = $_POST["email"];
-        $MSG = $_POST["MSG"];
-       
 
-
-            
-
-
-
-            
+        $MSG = $_POST["MSG"];           
             $servername = "localhost";
             $username = "root"; 
             $password = ""; 
@@ -161,8 +150,8 @@
                 $sql = "INSERT INTO recensioni (nome,email,messaggio) VALUES ('$nome', '$email','$MSG')";
                 if ($conn->query($sql) === TRUE) {
 
-                    echo "Dati inseriti con successo nel DataBase! ";
-                    header("Location: PaginaIniziale.php");
+                    echo "Grazie per aver lasciato la tua opinione! ";
+                    
                 } else {
                     echo "Errore nell'inserimento !";
                 }
@@ -175,7 +164,7 @@
         </div>
 
         
-        <a href="PaginaIniziale.php" class="back-button">Torna alla Pagina Iniziale</a>
+        <a href="PaginaPostLogin.php" class="back-button">Torna alla pagina precedente</a>
     </div>
 
 </body>

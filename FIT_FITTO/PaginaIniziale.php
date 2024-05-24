@@ -202,8 +202,8 @@ h2 {
         <a href="Registrazione.php">Registrati</a>
         <a href="Login.php">Login</a>
         <a href="ChiSiamo.php">Chi Siamo?</a>
-        <a href="Contattaci.php">Contattaci</a>
-        <a href="PaginaIniziale.php">Sei un Admin?</a>
+       
+       
     </div>
 
     <h1>FITTO FIT WORLD</h1>

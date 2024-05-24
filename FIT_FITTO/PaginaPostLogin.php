@@ -9,7 +9,7 @@
         body {
             margin: 0;
             padding: 0;
-            height: 100vh; /* Altezza del viewport */
+            height: 100vh;
             display: flex;
         }
 
@@ -21,7 +21,7 @@
             align-items: center;
             flex-direction: column;
             color: white;
-            position: relative; /* Per consentire il posizionamento assoluto */
+            position: relative;
         }
 
         .left-half {
@@ -29,7 +29,7 @@
             background-repeat: no-repeat;
             background-position: center;
             background-size: cover;
-            position: relative; /* Assicura che il bottone sia posizionato correttamente */
+            position: relative;
         }
 
         .right-half {
@@ -41,11 +41,11 @@
 
         .divider {
             position: absolute;
-            width: 15px; /* Larghezza del contorno */
-            height: 100%; /* Altezza uguale all'altezza della finestra */
-            background-color: black; /* Colore del contorno */
-            z-index: 1; /* Assicura che il contorno sia sopra le immagini */
-            right: 50%; /* Posizionamento al centro tra le due colonne */
+            width: 15px;
+            height: 100%;
+            background-color: black;
+            z-index: 1;
+            right: 50%;
         }
 
         h1 {
@@ -55,7 +55,7 @@
             top: 20px;
             left: 20px;
             font-size: 45px;
-            z-index: 2; /* Assicura che il testo sia sopra il contorno */
+            z-index: 2;
         }
         
         h2 {
@@ -65,7 +65,7 @@
             top: 90px;
             left: 20px;
             font-size: 25px;
-            z-index: 2; /* Assicura che il testo sia sopra il contorno */
+            z-index: 2;
         }
 
         #mac {
@@ -78,23 +78,34 @@
             border: none;
             border-radius: 4px;
             cursor: pointer;
-            z-index: 2; /* Assicura che il pulsante sia sopra il contorno */
+            z-index: 2;
         }
 
         .big-button {
-            background-color: #990000; /* Rosso scuro */
+            background-color: #990000;
             color: white;
             border: none;
-            padding: 40px 70px; /* Aumenta il padding per rendere il bottone più grande */
+            padding: 40px 70px;
             font-size: 24px;
             border-radius: 10px;
             cursor: pointer;
             transition: background-color 0.3s ease;
-            text-decoration: none; /* Rimuove la sottolineatura del link */
+            text-decoration: none;
         }
 
         .big-button:hover {
-            background-color: #770000; /* Rosso più scuro al passaggio del mouse */
+            background-color: #770000;
+        }
+                .recensioni-button {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+        }
+
+        .contatti-button {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
         }
     </style>
 </head>
@@ -103,26 +114,40 @@
     <div class="left-half">
         <?php
         session_start();
+        $id = $_SESSION['id'];
         $nome =  $_SESSION['nome'];
         $cognome =  $_SESSION['cognome'];
-        echo "<h1>Salve $nome $cognome! </h1><br>";
+        $emai = $_SESSION['email'];
+        
+        echo "<h1>Salve $nome $cognome $id </h1><br>";
         ?>
         <h2>Sei pronto a sconvolgere il TUO fisico?</h2>
         <a href="COACHING.php" class="big-button">COACHING</a>
+        <a href="Contattaci.php" class="big-button recensioni-button">Recensioni</a>
     </div>
     <div class="divider"></div> 
     <div class="right-half">
         <form action="PaginaPostLogin.php" method="post">
-            <input type="submit" id="mac" name="ButtonExit" value="Exit">
+            <input type="submit" id="mac" name="ButtonExit" value="Exit" onclick="confirmExit()">
         </form>
         <a href="DIETA.php" class="big-button">DIETA</a>
-
+<a href="PIANI.php" class="big-button contatti-button">I MIEI PIANI</a>
         <?php
         if (isset($_POST['ButtonExit'])) {
             header("Location: PaginaIniziale.php");
             session_destroy();
         }
         ?>
+
+        <script>
+            function confirmExit() {
+                if (confirm("Sicuro di voler Uscire?")) {
+                    document.querySelector('form').submit();
+                } else {
+                    // L'utente ha annullato, non fare nulla
+                }
+            }
+        </script>
     </div>
 </body>
 

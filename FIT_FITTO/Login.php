@@ -21,7 +21,6 @@ if ($conn->connect_error) {
 // acquisizione dati dal form HTML
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-
   $email = $_POST["email"];
   //$passwordGLS = md5($passwordGLS);
   $passwordGLS = $_POST["password"];
@@ -70,151 +69,142 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 #l’area riservata alla quale possono accedere gli utenti autenticati.
 ?>
 
+<!DOCTYPE html>
 <html>
 
+<head>
+    <title>Login</title>
+
+</head>
+
 <body>
+    <div class="header">
+        <h1>Effettua il login per accedere ai nostri piani</h1>
+        <form action="Login.php" method="post">
+            <input type="submit" id="mac" name="ButtonExit" value="Exit">
+            <?php if (isset($_POST['ButtonExit'])) {
+                header("Location: PaginaIniziale.php");
+            } ?>
+        </form>
+    </div>
 
-  <title> Login</title>
-
-
-  <h1> EFFETTUA IL LOGIN  </h1>
-  <h1>PER ACCEDERE AI NOSTRI PIANI </h1>
-    
-
-  
-
-
-  <div>
-    <form action="Login.php" method="post">
-      <label for="NomeMail"> Inserisci la email : </label>
-      <input type="email" name="email"> <br>
-      <label for="NomePw"> Inserisci la password : </label>
-      <input type="password" name="password" text-align=""> <br>
-      <input type="submit" name="Invia" value="Invia">
-      <label for="Registrazione">Non ti sei ancora registrato ? </label> <br>
-      <input type="submit" name="Registrazione" value="Clicca qui">
-      
-      <?php if (isset($_POST['Registrazione'])) {
-        header("Location: Registrazione.php");
-      } ?>
-      <p>
-        <?php
-        if ($flag === FALSE) {
-
-          echo "A quanto pare non sei ancora registrato  <br> registrati con il tasto sopra ";
-        }
-        ?>
-      </p>
-
-
-    </form>
-
-
-  </div>
- 
-<form action="Login.php" method="post">
-
-  <input type="submit" id="mac" name="ButtonExit" value="Exit">
-        <?php if (isset($_POST['ButtonExit'])) {
-        header("Location: PaginaIniziale.php");
-      } ?>
-  </form>
-
+    <div class="form-container">
+        <form action="Login.php" method="post">
+            <label for="NomeMail">Inserisci la email:</label>
+            <input type="email" name="email"><br>
+            <label for="NomePw">Inserisci la password:</label>
+            <input type="password" name="password" text-align=""><br>
+            <input type="submit" name="Invia" value="Invia">
+            <label for="Registrazione">Non ti sei ancora registrato?</label><br>
+            <input type="submit" name="Registrazione" value="Clicca qui">
+            <?php if (isset($_POST['Registrazione'])) {
+                header("Location: Registrazione.php");
+            } ?>
+            <p>
+                <?php
+                if ($flag === FALSE) {
+                    echo "A quanto pare non sei ancora registrato <br> registrati con il tasto sopra ";
+                }
+                ?>
+            </p>
+        </form>
+    </div>
 </body>
+    <style>
+                     h1 {
+            font-size: 70px;
+            font-weight: 600;
+            font-family: 'Roboto', sans-serif;
+            color: red;
+            text-transform: uppercase;
+            text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.2),
+                         1px 2px 0px rgba(0, 0, 0, 0.2),
+                         1px 3px 0px rgba(0, 0, 0, 0.2),
+                         1px 4px 0px rgba(0, 0, 0, 0.2),
+                         1px 5px 0px rgba(0, 0, 0, 0.2),
+                         1px 6px 0px rgba(0, 0, 0, 0.2),
+                         1px 10px 5px rgba(0, 0, 0, 0.1),
+                         1px 15px 10px rgba(0, 0, 0, 0.1),
+                         1px 20px 30px rgba(0, 0, 0, 0.1),
+                         1px 25px 50px rgba(0, 0, 0, 0.1);
+            margin: 0;
+        }
 
 
+        p {
+            text-align: left;
+            font-size: 35px;
+            font-weight: 600;
+            font-family: 'Roboto', sans-serif;
+            color: green;
+            text-transform: uppercase;
+            text-shadow: 1px 1px 0px #957dad,
+                         1px 2px 0px #957dad,
+                         1px 3px 0px #957dad,
+                         1px 4px 0px #957dad,
+                         1px 5px 0px #957dad,
+                         1px 6px 0px #957dad,
+                         1px 10px 5px rgba(16, 16, 16, 0.5),
+                         1px 15px 10px rgba(16, 16, 16, 0.4),
+                         1px 20px 30px rgba(16, 16, 16, 0.3),
+                         1px 25px 50px rgba(16, 16, 16, 0.2);
+        }
 
-
-<style>
-  h1 {
-    text-align: center;
-    font-size: 70px;
-    font-weight: 600;
-    font-family: 'Roboto', sans-serif;
-    color: red;
-    text-transform: uppercase;
-    text-shadow: 1px 1px 0px #957dad,
-      1px 2px 0px #957dad,
-      1px 3px 0px #957dad,
-      1px 4px 0px #957dad,
-      1px 5px 0px #957dad,
-      1px 6px 0px #957dad,
-      1px 10px 5px rgba(16, 16, 16, 0.5),
-      1px 15px 10px rgba(16, 16, 16, 0.4),
-      1px 20px 30px rgba(16, 16, 16, 0.3),
-      1px 25px 50px rgba(16, 16, 16, 0.2);
-  }
-
-  p {
-    text-align: left;
-    font-size: 35px;
-    font-weight: 600;
-    font-family: 'Roboto', sans-serif;
-    color: red;
-    text-transform: uppercase;
-    text-shadow: 1px 1px 0px #957dad,
-      1px 2px 0px #957dad,
-      1px 3px 0px #957dad,
-      1px 4px 0px #957dad,
-      1px 5px 0px #957dad,
-      1px 6px 0px #957dad,
-      1px 10px 5px rgba(16, 16, 16, 0.5),
-      1px 15px 10px rgba(16, 16, 16, 0.4),
-      1px 20px 30px rgba(16, 16, 16, 0.3),
-      1px 25px 50px rgba(16, 16, 16, 0.2);
-  }
-       #mac {
-          
-           top: 300px;
-            margin-left: 1800px;
+        #mac {
+            margin-left: 20px;
             padding: 10px 20px;
-            background-color: red; 
-            color: white; 
+            background-color: red;
+            color: white;
             border: none;
             border-radius: 4px;
             cursor: pointer;
         }
-input[name="email"],input[name="password" ] {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
 
-  }
+        input[name="email"],
+        input[name="password"] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
 
-  body {
-    background-image: url("cavalla.jpg");
-    background-repeat: no-repeat;
-    background-position: absolute;
-    background-attachment: fixed;
-    background-size: cover;
-  }
+        body {
+            background-image: url("stacco.jpg");
+            background-repeat: no-repeat;
+            background-position: absolute;
+            background-attachment: fixed;
+            background-size: cover;
+        }
 
+        input[name="Invia"],
+        input[name="Registrazione"] {
+            width: 100%;
+            background-color: red;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
 
-  input[name="Invia"],input[name="Registrazione" ] {
-    width: 100%;
-    background-color: red;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
+        input[type=submit]:hover {
+            background-color: black;
+        }
 
-  input[type=submit]:hover {
-    background-color: black;
-  }
+        .form-container {
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
 
-  div {
-    border-radius: 5px;
-    background-color: #f2f2f2;
-    padding: 20px;
-  }
-</style>
-
-
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    </style>
 </html>

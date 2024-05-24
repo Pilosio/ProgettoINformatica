@@ -88,21 +88,21 @@
 
     <div class="container">
         <div class="coach">
-            <img src="persona1.jpg" alt="Coach 1">
-            <h2>Mario Rossi</h2>
-            <p>Specializzato in fitness e nutrizione. Con 10 anni di esperienza nel settore.</p>
+            <img src="trainer1.jpg" alt="Coach 1">
+            <h2>Marco Toro</h2>
+            <p>Specializzato in fitness e nutrizione. Con 10 anni di esperienza nel settore.Specializzatonel PowerLifting</p>
         </div>
 
         <div class="coach">
-            <img src="persona2.jpg" alt="Coach 2">
-            <h2>Giovanna Bianchi</h2>
-            <p>Consulente di benessere mentale e motivazionale. Aiuta le persone a superare gli ostacoli mentali.</p>
+            <img src="trainer2.jpg" alt="Coach 2">
+            <h2>Luca Tenace</h2>
+            <p>Consulente di benessere mentale e motivazionale. Aiuta le persone a superare gli ostacoli mentali. Coach di BodyBuilding</p>
         </div>
 
         <div class="coach">
-            <img src="persona3.jpg" alt="Coach 3">
-            <h2>Laura Verdi</h2>
-            <p>Coach di vita e sviluppo personale. Accompagna le persone nel raggiungimento dei loro obiettivi.</p>
+            <img src="trainer3.jpg" alt="Coach 3">
+            <h2>Alessandra Montagna</h2>
+            <p>Coach di vita e sviluppo personale. Appassionata nel Crossfitting</p>
         </div>
 
         <div class="btn-container">
